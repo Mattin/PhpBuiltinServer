@@ -22,14 +22,14 @@ class Test extends \Codeception\TestCase\Test
 
     public function testExceptionIfRequiredFieldsAreNotMet()
     {
-        $this->setExpectedExceptionRegExp('Codeception\Exception\ModuleConfig', '/set all the required fields/');
+        $this->setExpectedExceptionRegExp('Codeception\Exception\ModuleConfigException', '/set all the required fields/');
 
         new PhpBuiltinServer([], []);
     }
 
     public function testExceptionIfDocumentRootDoesNotExist()
     {
-        $this->setExpectedExceptionRegExp('Codeception\Exception\ModuleConfig', '/Document root does not exist/');
+        $this->setExpectedExceptionRegExp('Codeception\Exception\ModuleConfigException', '/Document root does not exist/');
 
         $config = [
             'hostname'     => 'localhost',
